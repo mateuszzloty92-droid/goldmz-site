@@ -1022,7 +1022,6 @@ body.nav-open .mobile-toggle{color:var(--gold)}
       const service = form.elements.service;
       const message = form.elements.message;
       const currentLang = localStorage.getItem('gold_lang') || 'pl';
-      if (!validateContactForm(this)) return;
       const alerts = {
         pl: 'Uzupełnij poprawnie wszystkie pola formularza.',
         en: 'Please fill out all form fields correctly.',
