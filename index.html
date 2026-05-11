@@ -28,7 +28,7 @@
 <meta content="GOLD Mateusz Złoty realizuje prace na wysokości, techniki dostępu linowego, przeglądy ŚOI, antykorozję, montaż i demontaż na Śląsku, Opolszczyźnie oraz w Czechach." name="twitter:description"/>
 <meta content="https://www.goldmz.pl/assets/og-cover.jpg" name="twitter:image"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link as="image" href="/assets/worker.webp" rel="preload"/>
+<link as="image" href="/assets/hero-bg.webp" rel="preload"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.goldmz.pl/#website","url":"https://www.goldmz.pl/","name":"GOLD Mateusz Złoty","inLanguage":["pl","en","cs"]},{"@type":"ProfessionalService","@id":"https://www.goldmz.pl/#organization","name":"GOLD Mateusz Złoty","url":"https://www.goldmz.pl/","image":"https://www.goldmz.pl/assets/og-cover.jpg","logo":"https://www.goldmz.pl/favicon.svg","telephone":"+48 725 032 593","email":"gold.mz@o2.pl","description":"Prace na wysokości, techniki dostępu linowego, przeglądy ŚOI, antykorozja, montaż i demontaż.","address":{"@type":"PostalAddress","addressLocality":"Zabełków","addressCountry":"PL"},"areaServed":[{"@type":"AdministrativeArea","name":"Województwo śląskie"},{"@type":"AdministrativeArea","name":"Województwo opolskie"},{"@type":"Country","name":"Czechia"}],"knowsLanguage":["pl","en","cs"],"serviceType":["Interwencyjne prace alpinistyczne 24/7","Mycie okien, przeszkleń i fasad szklanych","Mycie wysokociśnieniowe","Odśnieżanie dachów","Inspekcje","Naprawa elewacji","Montaż i demontaż","Malowanie hydrodynamiczne","Zwyżka","Przegląd ŚOI","Antykorozja"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+48 725 032 593","email":"gold.mz@o2.pl","availableLanguage":["pl","en","cs"]}],"sameAs":["https://www.facebook.com/goldmz"]}]}</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -126,7 +126,7 @@ img{display:block;max-width:100%}
 }
 .hero-photo{
   position:absolute;inset:0;
-  background-image:url('/assets/worker.webp');
+  background-image:url('/assets/hero-bg.webp');
   background-size:cover;background-repeat:no-repeat;background-position:68% center;
   filter:grayscale(100%) contrast(1.06) brightness(.92)
 }
@@ -609,7 +609,7 @@ body.nav-open .mobile-toggle{color:var(--gold)}
   outline:2px solid var(--gold);
   outline-offset:3px;
 }
-.hero-photo{background-image:url("/assets/worker.webp")}
+.hero-photo{background-image:url("/assets/hero-bg.webp")}
 
 .form-status{
   display:none;
@@ -1129,8 +1129,7 @@ body.nav-open .mobile-toggle{color:var(--gold)}
         const targetLang = btn.dataset.lang;
         localStorage.setItem('gold_lang', targetLang);
         localStorage.setItem('gold_last_submit_lang', targetLang);
-        const hash = window.location.hash || '';
-        window.location.href = `${langBasePath(targetLang)}${hash}`;
+        setLanguage(targetLang);
       });
     });
 
@@ -1231,7 +1230,10 @@ body.nav-open .mobile-toggle{color:var(--gold)}
     });
 
     const searchLang = new URLSearchParams(window.location.search).get('lang');
-    const initialLang = ['pl','en','cs'].includes(searchLang) ? searchLang : detectPathLang();
+    const storedLang = localStorage.getItem('gold_lang');
+    const initialLang = ['pl','en','cs'].includes(searchLang) ? searchLang
+      : ['pl','en','cs'].includes(storedLang) ? storedLang
+      : detectPathLang();
     setLanguage(initialLang);
   </script>
 </body>
