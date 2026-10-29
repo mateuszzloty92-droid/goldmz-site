@@ -648,6 +648,7 @@ body.nav-open .mobile-toggle{color:var(--gold)}
 }
 
 </style>
+<script defer src="/assets/analytics.js"></script>
 </head>
 <body><a class="skip-link" data-i18n="skipContent" href="#main-content">Przejdź do treści</a><noscript><div style="padding:12px 16px;background:#c9a646;color:#090909;font-weight:700;text-align:center">Wersje językowe działają najlepiej przy włączonym JavaScript. Domyślnie wyświetlana jest wersja polska.</div></noscript>
 <header class="site-header">
@@ -1215,6 +1216,7 @@ body.nav-open .mobile-toggle{color:var(--gold)}
         });
 
         if (!response.ok) throw new Error('Request failed');
+        document.dispatchEvent(new Event('gold:contact-success'));
 
         status.className = 'form-status show success';
         status.textContent = t.formSuccess || 'Message sent.';
