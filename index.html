@@ -1209,13 +1209,22 @@ body.nav-open .mobile-toggle{color:var(--gold)}
       button.textContent = t.formSending || 'Sending...';
 
       try {
-        const response = await fetch(this.action, {
+        const endpoint = new URL(this.action);
+        endpoint.pathname = '/ajax/' + endpoint.pathname.split('/').filter(Boolean).pop();
+        const response = await fetch(endpoint.href, {
           method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          body: JSON.stringify(Object.fromEntries(formData.entries())),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
         });
 
         if (!response.ok) throw new Error('Request failed');
+        const result = await response.json();
+        if (result.success !== true && result.success !== 'true') {
+          throw new Error('Submission was not accepted');
+        }
         document.dispatchEvent(new Event('gold:contact-success'));
 
         status.className = 'form-status show success';
