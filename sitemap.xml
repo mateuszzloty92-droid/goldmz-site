@@ -2,32 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.goldmz.pl/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.goldmz.pl/interwencyjne-prace-alpinistyczne/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.goldmz.pl/inspekcje-na-wysokosci/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.goldmz.pl/mycie-okien-przeszklen-fasad-szklanych/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.goldmz.pl/montaz-i-demontaz-na-wysokosci/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.goldmz.pl/przeglad-srodkow-ochrony-indywidualnej/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/antykorozja/</loc>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/malowanie-hydrodynamiczne/</loc>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/mycie-wysokocisnieniowe/</loc>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/naprawa-elewacji/</loc>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/odsniezanie-dachow/</loc>
+  </url>
+  <url>
+    <loc>https://www.goldmz.pl/zwyzka/</loc>
   </url>
 </urlset>
