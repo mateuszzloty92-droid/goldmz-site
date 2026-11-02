@@ -35,9 +35,10 @@ jobs:
           import os
           import subprocess
           import urllib.request
+          import urllib.parse
           import xml.etree.ElementTree as ET
 
-          host = "www.goldmz.pl"
+          host = "goldmz.pl"
           base = f"https://{host}"
           key = "d23c7b5227af4e64a09c79fc27effecf"
           key_url = f"{base}/{key}.txt"

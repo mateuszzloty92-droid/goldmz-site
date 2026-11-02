@@ -20,3 +20,16 @@ for = "/robots.txt"
 for = "/sitemap.xml"
   [headers.values]
   Cache-Control = "public, max-age=0, must-revalidate"
+
+# Keep the existing primary domain consistent with canonical URLs.
+[[redirects]]
+from = "https://www.goldmz.pl/*"
+to = "https://goldmz.pl/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://www.goldmz.pl/*"
+to = "https://goldmz.pl/:splat"
+status = 301
+force = true
